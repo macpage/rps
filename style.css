@@ -37,6 +37,7 @@ grid-template-rows: 1fr 1fr 4fr 2fr;
    background-color: cadetblue;
    padding: 10px;
    color: white;
+   text-align: center;
 }
 
 #spawnpoint{
@@ -67,10 +68,10 @@ h1 img{
 
 
 #selection{
-    align-self: flex-end;
+    align-self: center;
     display: flex;
     
-    justify-content: center;
+    gap: 20px;
 }
 
 
