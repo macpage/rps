@@ -8,6 +8,13 @@ html,body{
  width: 100%;
 }
 
+
+html{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 body{background-color: #f2ae61;
 display: grid;
 justify-content: center;
@@ -30,8 +37,8 @@ grid-template-rows: 1fr 2fr 1fr;
 
 #spawnpoint img{
     background-color: rgb(95, 113, 160);
-    height: 25%;
-    width: 25%;
+    height: 150px;
+    width: 150px;
 }
 
 
@@ -47,7 +54,7 @@ h1 img{
 #selection{
     align-self: flex-end;
     display: flex;
-    gap: 10%;
+    
     justify-content: center;
 }
 
@@ -56,7 +63,17 @@ h1 img{
     height: 150px;
     transition: transform 0.9s ease-in-out;
 }
-
+@media(max-width:900px){
+    #selection img{
+        height: 100px;
+        transition: transform 0.9s ease-in-out;
+    }
+    #spawnpoint img{
+        background-color: rgb(95, 113, 160);
+        height: 100px;
+        width: 100px;
+    }
+}
 
 #selection img:hover{
 animation: bounce 1s infinite;
@@ -73,4 +90,8 @@ cursor: pointer;
     60%{
         transform: translateY(-10%);
     }
+}
+
+button{
+    all: unset;
 }
