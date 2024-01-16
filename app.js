@@ -6,9 +6,17 @@ let player_score = 0;
 let bot_score = 0;
 
 let player_spawn = document.querySelector('#playerspawn');
+
 let bot_spawn = document.querySelector('#botspawn');
 // Game logic
 document.querySelector('#rock').addEventListener('click', () => {
+  player_spawn.classList.add('scale');
+  bot_spawn.classList.add('scale');
+  player_spawn.addEventListener('animationend', () => {
+    player_spawn.classList.remove('scale');
+    bot_spawn.classList.remove('scale');
+  });
+
   choice = 'rock';
   choice_made();
   console.log(player_score);
@@ -19,6 +27,12 @@ document.querySelector('#rock').addEventListener('click', () => {
 });
 
 document.querySelector('#paper').addEventListener('click', () => {
+  player_spawn.classList.add('scale');
+  bot_spawn.classList.add('scale');
+  player_spawn.addEventListener('animationend', () => {
+    player_spawn.classList.remove('scale');
+    bot_spawn.classList.remove('scale');
+  });
   choice = 'paper';
   choice_made();
   player_spawn.src = 'pics/paper.png';
@@ -27,6 +41,12 @@ document.querySelector('#paper').addEventListener('click', () => {
 });
 
 document.querySelector('#scissor').addEventListener('click', () => {
+  player_spawn.classList.add('scale');
+  bot_spawn.classList.add('scale');
+  player_spawn.addEventListener('animationend', () => {
+    player_spawn.classList.remove('scale');
+    bot_spawn.classList.remove('scale');
+  });
   choice = 'scissor';
 
   choice_made();
