@@ -13,20 +13,26 @@ document.querySelector('#rock').addEventListener('click', () => {
   choice_made();
   console.log(player_score);
   console.log(bot_score);
-  player_spawn.src = 'pics/Rock.png';
+  player_spawn.src = 'pics/rock.png';
+  document.querySelector('#playerscore').innerHTML = player_score;
+  document.querySelector('#botscore').innerHTML = bot_score;
 });
 
 document.querySelector('#paper').addEventListener('click', () => {
   choice = 'paper';
   choice_made();
-  player_spawn.src = 'pics/Paper.png';
+  player_spawn.src = 'pics/paper.png';
+  document.querySelector('#playerscore').innerHTML = player_score;
+  document.querySelector('#botscore').innerHTML = bot_score;
 });
 
 document.querySelector('#scissor').addEventListener('click', () => {
   choice = 'scissor';
 
   choice_made();
-  player_spawn.src = 'pics/Scissor.png';
+  player_spawn.src = 'pics/scissor.png';
+  document.querySelector('#playerscore').innerHTML = player_score;
+  document.querySelector('#botscore').innerHTML = bot_score;
 });
 
 function choice_made() {
