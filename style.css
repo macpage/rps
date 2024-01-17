@@ -76,8 +76,12 @@ h1 img{
 
 #soundbutton{
     position: absolute;
-    padding-left: 80%;
-   
+    left: 80%;
+    
+}
+
+#soundbutton img :hover{
+    cursor: pointer;
 }
 
 #selection{
