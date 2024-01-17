@@ -93,11 +93,14 @@ function choice_made() {
         if (botChoice == 'paper') {
           bot_score++;
           sounds[1].play();
+          sounds[1].currentTime = 0;
         } else if (botChoice == 'scissor') {
           player_score++;
           sounds[0].play();
+          sounds[0].currentTime = 0;
         } else {
           sounds[2].play();
+          sounds[2].currentTime = 0;
         }
       }
       break;
@@ -106,11 +109,14 @@ function choice_made() {
         if (botChoice == 'rock') {
           player_score++;
           sounds[0].play();
+          sounds[0].currentTime = 0;
         } else if (botChoice == 'scissor') {
           bot_score++;
           sounds[1].play();
+          sounds[1].currentTime = 0;
         } else {
           sounds[2].play();
+          sounds[2].currentTime = 0;
         }
       }
       break;
@@ -118,11 +124,14 @@ function choice_made() {
       if (botChoice == 'rock') {
         bot_score++;
         sounds[1].play();
+        sounds[1].currentTime = 0;
       } else if (botChoice == 'paper') {
         player_score++;
         sounds[0].play();
+        sounds[0].currentTime = 0;
       } else {
         sounds[2].play();
+        sounds[2].currentTime = 0;
       }
     }
   }
