@@ -20,16 +20,16 @@ let sound = true;
 soundbutton.addEventListener('click', () => {
   if (sound) {
     sound = false;
-    sounds[0].volume = 0;
-    sounds[1].volume = 0;
-    sounds[2].volume = 0;
+    sounds = [new Audio(''), new Audio(''), new Audio('')];
     document.querySelector('#soundbutton').childNodes[1].src =
       'pics/sound_off.png';
   } else {
     sound = true;
-    sounds[0].volume = 1;
-    sounds[1].volume = 1;
-    sounds[2].volume = 1;
+    sounds = [
+      new Audio('sounds/win.mp3'),
+      new Audio('sounds/lose.mp3'),
+      new Audio('sounds/draw.mp3'),
+    ];
     document.querySelector('#soundbutton').childNodes[1].src =
       'pics/sound_on.png';
   }
