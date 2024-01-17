@@ -8,6 +8,33 @@ let bot_score = 0;
 let player_spawn = document.querySelector('#playerspawn');
 
 let bot_spawn = document.querySelector('#botspawn');
+
+let sounds = [
+  new Audio('sounds/win.mp3'),
+  new Audio('sounds/lose.mp3'),
+  new Audio('sounds/draw.mp3'),
+];
+
+let soundbutton = document.querySelector('#soundbutton');
+let sound = true;
+soundbutton.addEventListener('click', () => {
+  if (sound) {
+    sound = false;
+    sounds[0].volume = 0;
+    sounds[1].volume = 0;
+    sounds[2].volume = 0;
+    document.querySelector('#soundbutton').childNodes[1].src =
+      'pics/sound_off.png';
+  } else {
+    sound = true;
+    sounds[0].volume = 1;
+    sounds[1].volume = 1;
+    sounds[2].volume = 1;
+    document.querySelector('#soundbutton').childNodes[1].src =
+      'pics/sound_on.png';
+  }
+});
+
 // Game logic
 document.querySelector('#rock').addEventListener('click', () => {
   player_spawn.classList.add('scale');
@@ -65,9 +92,12 @@ function choice_made() {
       {
         if (botChoice == 'paper') {
           bot_score++;
-        }
-        if (botChoice == 'scissor') {
+          sounds[1].play();
+        } else if (botChoice == 'scissor') {
           player_score++;
+          sounds[0].play();
+        } else {
+          sounds[2].play();
         }
       }
       break;
@@ -75,18 +105,24 @@ function choice_made() {
       {
         if (botChoice == 'rock') {
           player_score++;
-        }
-        if (botChoice == 'scissor') {
+          sounds[0].play();
+        } else if (botChoice == 'scissor') {
           bot_score++;
+          sounds[1].play();
+        } else {
+          sounds[2].play();
         }
       }
       break;
     case 'scissor': {
       if (botChoice == 'rock') {
         bot_score++;
-      }
-      if (botChoice == 'paper') {
+        sounds[1].play();
+      } else if (botChoice == 'paper') {
         player_score++;
+        sounds[0].play();
+      } else {
+        sounds[2].play();
       }
     }
   }

@@ -23,6 +23,7 @@ justify-items: center;
 padding: 5%;
 box-sizing: border-box;
 grid-template-rows: 1fr 1fr 4fr 2fr;
+gap: 5%;
 }
 
 #scoreboard{
@@ -52,7 +53,7 @@ grid-template-rows: 1fr 1fr 4fr 2fr;
 }
 
 #spawnpoint img{
-    background-color: rgb(95, 113, 160);
+    background-color: transparent;
     height: 150px;
     width: 150px;
     
@@ -64,12 +65,20 @@ grid-template-rows: 1fr 1fr 4fr 2fr;
 
 h1{
     align-self: flex-start;
+    display: flex;
+    width: 100%;
+    justify-content: center;
 }
 
 h1 img{
     height: 50px;
 }
 
+#soundbutton{
+    position: absolute;
+    padding-left: 80%;
+   
+}
 
 #selection{
     align-self: center;
